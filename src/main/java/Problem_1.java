@@ -18,7 +18,7 @@ public class Problem_1 implements Problem {
         init();
         solver_1a();
         solver_1b();
-        getResult();
+        //getResult();
     }
 
     private void init() {
@@ -37,10 +37,8 @@ public class Problem_1 implements Problem {
     private void solver_1a() {
         startTimeA = System.currentTimeMillis();
         for (int i = 0; i < input.size(); i++){
-            for (int j = 0; j < input.size(); j++) {
-            //for (int j = i; j < input.size()-i; j++) {
+            for (int j = i; j < input.size(); j++) {
                 if (Integer.valueOf(input.get(i)) + Integer.valueOf(input.get(j)) == 2020){
-                    //System.out.println(input.get(i) + " " + input.get(j));
                     answerA = String.valueOf(Integer.valueOf(input.get(i)) * Integer.valueOf(input.get(j)));
                     stopTimeA = System.currentTimeMillis();
                     return;
@@ -53,9 +51,9 @@ public class Problem_1 implements Problem {
         startTimeB = System.currentTimeMillis();
         for (int i = 0; i < input.size(); i++){
             //System.out.print(i);
-            for (int j = 0; j < input.size(); j++) {
+            for (int j = i; j < input.size(); j++) {
                 //for (int j = i; j < input.size()-i; j++) {
-                for(int k = 0; k < input.size(); k++) {
+                for(int k = j; k < input.size(); k++) {
                     if (Integer.valueOf(input.get(i)) + Integer.valueOf(input.get(j)) + Integer.valueOf(input.get(k)) == 2020) {
                         //System.out.println(input.get(i) + " " + input.get(j));
                         answerB = String.valueOf(Integer.valueOf(input.get(i)) * Integer.valueOf(input.get(j)) * Integer.valueOf(input.get(k)));
