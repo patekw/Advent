@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Problem_2 implements Problem {
 
     private ArrayList<String> input;
-    private String answerA;
+    private int answerA;
     private String answerB;
     private Long startTimeA;
     private Long stopTimeA;
@@ -35,19 +35,54 @@ public class Problem_2 implements Problem {
     }
 
     private void solver_2a() {
+        startTimeA = System.currentTimeMillis();
+        String [] parts;
+        String lower = "";
+        String upper = "";
+        String letter = "";
+        String password = "";
+        answerA = 0;
         for (int i = 0; i < input.size(); i++){
 
+            if(i % 3 == 0){
+                parts = input.get(i).split("-");
+                lower = parts[0];
+                upper = parts[1];
+            } else if(i % 3 == 1){
+                parts = input.get(i).split(":");
+
+                letter = parts[0];
+            } else { // == 2
+                password = input.get(i);
+                //System.out.println(password);
+
+            }
+
+            int numberChar = 0;
+            for (int j = 0; j < password.length(); j++) {
+
+                if(String.valueOf(password.charAt(j)).equals(letter)) {
+                    numberChar++;
+                }
+            }
+            System.out.println(lower + "-" + upper + " " + letter + " " + password + " :: " + numberChar);
+            if(numberChar >= Integer.parseInt(lower) && numberChar <= Integer.parseInt(upper)){
+                System.out.println("OK");
+                answerA++;
+            }
         }
+        stopTimeA = System.currentTimeMillis();
     }
 
     private void solver_2b() {
-
+        startTimeB = System.currentTimeMillis();
+        answerB = "N/A";
+        stopTimeB = System.currentTimeMillis();
     }
 
     @Override
     public String getResult(){
-        return "";
-        // return "Answer_1a: " + answerA + " Time: " + (stopTimeA - startTimeA) + "ms" + "\n" + "Answer_1b: " + answerB + " Time: " + (stopTimeB - startTimeB) + "ms";
+        return "Answer_1a: " + answerA + " Time: " + (stopTimeA - startTimeA) + "ms" + "\n" + "Answer_1b: " + answerB + " Time: " + (stopTimeB - startTimeB) + "ms";
     }
 
 }
