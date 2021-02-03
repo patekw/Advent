@@ -16,8 +16,8 @@ public class Problem_1 implements Problem {
 
     public Problem_1() {
         init();
-        solver_1a();
-        solver_1b();
+        solverA();
+        solverB();
         //getResult();
     }
 
@@ -34,7 +34,7 @@ public class Problem_1 implements Problem {
         }
     }
 
-    private void solver_1a() {
+    private void solverA() {
         startTimeA = System.currentTimeMillis();
         for (int i = 0; i < input.size(); i++){
             for (int j = i; j < input.size(); j++) {
@@ -47,7 +47,7 @@ public class Problem_1 implements Problem {
         }
     }
 
-    private void solver_1b() {
+    private void solverB() {
         startTimeB = System.currentTimeMillis();
         for (int i = 0; i < input.size(); i++){
             //System.out.print(i);
