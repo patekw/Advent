@@ -18,7 +18,7 @@ public class Problem_2 implements Problem {
         init();
         solver_2a();
         solver_2b();
-        //getResult();
+        getResult();
     }
 
     private void init() {
@@ -40,7 +40,7 @@ public class Problem_2 implements Problem {
         String lower = "";
         String upper = "";
         String letter = "";
-        String password = "";
+        String password;
         answerA = 0;
         for (int i = 0; i < input.size(); i++){
 
@@ -52,23 +52,19 @@ public class Problem_2 implements Problem {
                 parts = input.get(i).split(":");
 
                 letter = parts[0];
-            } else { // == 2
+            } else if(i % 3 == 2){
                 password = input.get(i);
-                //System.out.println(password);
+                int numberChar = 0;
+                for (int j = 0; j < password.length(); j++) {
 
-            }
-
-            int numberChar = 0;
-            for (int j = 0; j < password.length(); j++) {
-
-                if(String.valueOf(password.charAt(j)).equals(letter)) {
-                    numberChar++;
+                    if(String.valueOf(password.charAt(j)).equals(letter)) {
+                        numberChar++;
+                    }
                 }
-            }
-            System.out.println(lower + "-" + upper + " " + letter + " " + password + " :: " + numberChar);
-            if(numberChar >= Integer.parseInt(lower) && numberChar <= Integer.parseInt(upper)){
-                System.out.println("OK");
-                answerA++;
+                //System.out.println(lower + "-" + upper + " " + letter + " " + password + " :: " + numberChar);
+                if(numberChar >= Integer.parseInt(lower) && numberChar <= Integer.parseInt(upper)){
+                    answerA++;
+                }
             }
         }
         stopTimeA = System.currentTimeMillis();
