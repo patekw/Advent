@@ -18,7 +18,7 @@ public class Problem_1 implements Problem {
         init();
         solverA();
         solverB();
-        //getResult();
+        getResult();
     }
 
     private void init() {
