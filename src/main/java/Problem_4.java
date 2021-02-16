@@ -21,7 +21,8 @@ public class Problem_4 implements Problem {
         getResult();
     }
 
-    private void init() {
+    @Override
+    public void init() {
         try {
             input = new ArrayList<>();
             Scanner s = new Scanner(new File("src/main/resources/input_4.txt"));
@@ -34,11 +35,13 @@ public class Problem_4 implements Problem {
         }
     }
 
-    private void solverA() {
+    @Override
+    public void solverA() {
 
     }
 
-    private void solverB() {
+    @Override
+    public void solverB() {
 
     }
 

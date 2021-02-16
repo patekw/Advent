@@ -21,7 +21,8 @@ public class Problem_3 implements Problem {
         getResult();
     }
 
-    private void init() {
+    @Override
+    public void init() {
         try {
             input = new ArrayList<>();
             Scanner s = new Scanner(new File("src/main/resources/input_3.txt"));
@@ -34,11 +35,12 @@ public class Problem_3 implements Problem {
         }
     }
 
-    private void solverA() {
+    @Override
+    public void solverA() {
         startTimeA = System.currentTimeMillis();
         int currentIndex = 0;
         for (int i = 1; i < input.size(); i++) {
-            if (currentIndex == 30) {
+            if (currentIndex == 30) { // fixa row length istället
                 currentIndex = 2;
             } else if (currentIndex == 29) {
                 currentIndex = 1;
@@ -54,7 +56,8 @@ public class Problem_3 implements Problem {
         stopTimeA = System.currentTimeMillis();
     }
 
-    private void solverB() {
+    @Override
+    public void solverB() {
         startTimeB = System.currentTimeMillis();
         int currentIndex1 = 0;
         int currentIndex2 = 0;

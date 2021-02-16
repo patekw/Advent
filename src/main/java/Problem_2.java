@@ -21,7 +21,8 @@ public class Problem_2 implements Problem {
         getResult();
     }
 
-    private void init() {
+    @Override
+    public void init() {
         try {
             input = new ArrayList<>();
             Scanner s = new Scanner(new File("src/main/resources/input_2.txt"));
@@ -34,7 +35,8 @@ public class Problem_2 implements Problem {
         }
     }
 
-    private void solverA() {
+    @Override
+    public void solverA() {
         startTimeA = System.currentTimeMillis();
         String [] parts;
         String lower = "";
@@ -70,7 +72,8 @@ public class Problem_2 implements Problem {
         stopTimeA = System.currentTimeMillis();
     }
 
-    private void solverB() {
+    @Override
+    public void solverB() {
         startTimeB = System.currentTimeMillis();
         String [] parts;
         String firstIndex = "";
